@@ -23,7 +23,7 @@ RUN set -ex \
 
 WORKDIR /var/www/html/
 
-RUN mkdir /var/www/files \
+RUN mkdir /var/www/files
 	 && chown -R www-data /var/www/files
 
 
