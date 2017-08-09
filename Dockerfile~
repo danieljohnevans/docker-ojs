@@ -24,7 +24,7 @@ RUN set -ex \
 WORKDIR /var/www/html/ojs
 
 RUN mkdir /var/www/files \
-	 && chown -R www-data /var/www/files
+	 && chmod -R 755 /var/www/files
 
 
 RUN curl -fSL "http://pkp.sfu.ca/ojs/download/ojs-3.0.2.tar.gz" -o ojs.tar.gz \

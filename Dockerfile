@@ -21,13 +21,14 @@ RUN set -ex \
 		libpq5 \
 	&& apt-get purge -y --auto-remove $buildDeps
 
-WORKDIR /var/www/html/ojs
+WORKDIR /var/www/html/
 
 RUN mkdir /var/www/files \
-	 && chmod -R 755 /var/www/files
+	&& chown -R www-data /var/www/files
 
 
 RUN curl -fSL "http://pkp.sfu.ca/ojs/download/ojs-3.0.2.tar.gz" -o ojs.tar.gz \
 	&& tar -xz --strip-components=1 -f ojs.tar.gz \
 	&& rm ojs.tar.gz \
-	&& chown -R www-data:www-data public cache cache/t_compile cache/_db config.inc.php
+	&& chown -R www-data:www-data public cache cache/t_compile cache/_db \
+	&& chmod -R 755 config.ini.php
