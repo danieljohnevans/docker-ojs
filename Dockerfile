@@ -30,5 +30,4 @@ RUN mkdir /var/www/files \
 RUN curl -fSL "http://pkp.sfu.ca/ojs/download/ojs-3.0.2.tar.gz" -o ojs.tar.gz \
 	&& tar -xz --strip-components=1 -f ojs.tar.gz \
 	&& rm ojs.tar.gz \
-	&& chown -R www-data:www-data public cache cache/t_compile cache/_db \
-	&& chmod -R 755 config.ini.php
+	&& chown -R www-data:www-data public cache cache/t_compile cache/_db 
